@@ -1,0 +1,33 @@
+{
+  "originHash" : "4ffb659c1bddb181f425b2cf1754fbffa28546a574361603ff87b4bfa45cfeaf",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "arcgis-runtime-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Esri/arcgis-runtime-ios",
+      "state" : {
+        "revision" : "720812b1124c92ddcb6bdb60904eaef315571797",
+        "version" : "100.15.6"
+      }
+    },
+    {
+      "identity" : "mbprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jdg/MBProgressHUD",
+      "state" : {
+        "revision" : "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}
