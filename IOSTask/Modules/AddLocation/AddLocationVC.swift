@@ -41,6 +41,13 @@ class AddLocationVC: UIViewController {
             mapVC.locations = presenter.locations
             navigationController?.pushViewController(mapVC, animated: true)
         }
+    @IBAction func openLinkTapped(_ sender: UIButton) {
+        let story = UIStoryboard(name: "AddLocationVIiew", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "OpenLinkWebViewVC") as! OpenLinkWebViewVC
+       // mapVC.locations = presenter.locations
+        navigationController?.pushViewController(vc, animated: true)
+    
+    }
     
     @IBAction func plusBtnTapped(_ sender: UIButton) {
         presenter.openForm()
@@ -56,6 +63,10 @@ class AddLocationVC: UIViewController {
         presenter.addLocation(name: txtName.text, latitude: txtLatitude.text, longitude: txtLongitude.text)
         view.endEditing(true)
     }
+    
+    
+    
+    
     private func setUpTableView(){
         tbView.delegate = self
         tbView.dataSource = self

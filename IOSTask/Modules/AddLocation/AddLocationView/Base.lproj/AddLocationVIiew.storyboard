@@ -48,8 +48,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iif-cr-v3x">
                                 <rect key="frame" x="16" y="148" width="382" height="672"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-A1-P0i">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScF-bt-L78">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="oXP-jM-yZO"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="open Link">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openLinkTapped:" destination="HpK-BN-HFf" eventType="touchUpInside" id="6pr-lL-Ses"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-A1-P0i">
+                                        <rect key="frame" x="0.0" y="58" width="382" height="50"/>
                                         <color key="backgroundColor" name="darkSkyBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="c42-kE-Nbs"/>
@@ -69,13 +89,13 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cag-9I-BRX">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="672"/>
+                                        <rect key="frame" x="0.0" y="66" width="382" height="606"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-Sn-Wcc" userLabel="ViewEmpty">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="672"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="606"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Q0i-fJ-RRJ">
-                                                        <rect key="frame" x="99" y="264.66666666666669" width="184" height="143"/>
+                                                        <rect key="frame" x="99" y="231.66666666666669" width="184" height="143"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-ty-H04">
                                                                 <rect key="frame" x="32" y="1.3333333333333357" width="120" height="117.66666666666666"/>
@@ -419,6 +439,40 @@
             </objects>
             <point key="canvasLocation" x="1293" y="-25"/>
         </scene>
+        <!--Open Link Web ViewVC-->
+        <scene sceneID="FQX-bp-bPK">
+            <objects>
+                <viewController storyboardIdentifier="OpenLinkWebViewVC" id="XlA-ZS-XKl" customClass="OpenLinkWebViewVC" customModule="IOSTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8fG-su-R1t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-NP-R8s">
+                                <rect key="frame" x="16" y="96" width="382" height="724"/>
+                                <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.42352941179999998" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ubF-NQ-vI7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QCo-NP-R8s" firstAttribute="top" secondItem="ubF-NQ-vI7" secondAttribute="top" constant="8" id="4a7-zD-WaD"/>
+                            <constraint firstItem="QCo-NP-R8s" firstAttribute="leading" secondItem="ubF-NQ-vI7" secondAttribute="leading" constant="16" id="AfQ-Fl-27l"/>
+                            <constraint firstItem="ubF-NQ-vI7" firstAttribute="bottom" secondItem="QCo-NP-R8s" secondAttribute="bottom" constant="8" id="XRS-DB-SJu"/>
+                            <constraint firstItem="ubF-NQ-vI7" firstAttribute="trailing" secondItem="QCo-NP-R8s" secondAttribute="trailing" constant="16" id="Zz7-M6-WdJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="QCo-NP-R8s" id="HE3-Td-ZCS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y90-fU-DP6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="-5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="PlusIcon" width="48" height="48"/>
@@ -428,6 +482,9 @@
         <namedColor name="darkSkyBlue">
             <color red="0.2199999988079071" green="0.72500002384185791" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
