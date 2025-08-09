@@ -45,9 +45,21 @@ class AddLocationVC: UIViewController {
         let story = UIStoryboard(name: "AddLocationVIiew", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "OpenLinkWebViewVC") as! OpenLinkWebViewVC
        // mapVC.locations = presenter.locations
+        vc.link = "http://8.213.81.130:8087/api/account/login"
         navigationController?.pushViewController(vc, animated: true)
     
     }
+    
+    @IBAction func openFaceBookTapped(_ sender: UIButton) {
+        
+        let story = UIStoryboard(name: "AddLocationVIiew", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "OpenLinkWebViewVC") as! OpenLinkWebViewVC
+       // mapVC.locations = presenter.locations
+        vc.link = "https://www.facebook.com"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     @IBAction func plusBtnTapped(_ sender: UIButton) {
         presenter.openForm()

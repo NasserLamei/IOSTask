@@ -14,7 +14,7 @@ class OpenLinkWebViewVC: UIViewController, WKNavigationDelegate  {
     
     
     var header: String?
-    var link = "http://8.213.81.130:8087/api/account/login"
+    var link :String?
     var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
@@ -30,13 +30,23 @@ class OpenLinkWebViewVC: UIViewController, WKNavigationDelegate  {
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         self.view.addSubview(activityIndicator)
-        if let url = URL(string: link) {
+//        if let url = URL(string: link) {
+//            let request = URLRequest(url: url)
+//            webView.load(request)
+//        } else {
+//            // Handle invalid URL string
+//            print("Invalid URL string")
+//        }
+        if let link = link?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: link) {
             let request = URLRequest(url: url)
             webView.load(request)
         } else {
-            // Handle invalid URL string
-            print("Invalid URL string")
+            print("Invalid URL string: \(link ?? "nil")")
         }
+
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         activityIndicator.startAnimating()
